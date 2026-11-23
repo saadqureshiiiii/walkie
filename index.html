@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Warda’s Walk</title>
+<title>Warda and Saad’s Walk Time</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
@@ -32,17 +32,14 @@
 }
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Nunito",system-ui,sans-serif;transition:background .5s,color .5s}
+body{margin:0;background:var(--paper);color:var(--ink);font:600 17px/1.5 "Nunito",system-ui,sans-serif;transition:background .5s,color .5s}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:10}
-main{max-width:860px;margin:0 auto;padding:20px 18px 70px}
+main{max-width:760px;margin:0 auto;padding:20px 18px 60px}
 h1,h2{font-family:"Bagel Fat One","Trebuchet MS",cursive;font-weight:400;line-height:1.1;margin:0}
-h1{font-size:clamp(44px,11vw,84px);color:var(--accent);letter-spacing:.5px}
-h2{font-size:clamp(28px,6vw,38px);margin-bottom:6px}
-.lead{max-width:34em;color:var(--muted);margin:10px 0 18px;font-size:1.05rem}
-section{margin-top:54px}
-.sub{color:var(--muted);margin:0 0 18px;max-width:36em}
+h1{font-size:clamp(38px,9vw,70px);color:var(--accent);margin-bottom:18px}
+h2{font-size:clamp(26px,5.5vw,34px);margin-bottom:14px}
+section{margin-top:44px}
 
-/* scene */
 .scene{position:relative;border-radius:28px;overflow:hidden;border:3px solid var(--line);cursor:pointer;touch-action:manipulation}
 .scene svg{display:block;width:100%;height:auto}
 .scroll{animation:scroll 16s linear infinite}
@@ -63,50 +60,29 @@ section{margin-top:54px}
 .pop{position:absolute;pointer-events:none;color:var(--accent);font-size:26px;animation:rise 1.8s ease-out forwards}
 @keyframes rise{from{transform:translateY(0) scale(.6);opacity:1}to{transform:translateY(-140px) scale(1.2);opacity:0}}
 
-.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-button,summary{font:inherit}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+button,input{font:inherit}
 .btn{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:11px 20px;font-weight:800;cursor:pointer}
 .btn.alt{background:var(--chip);color:var(--ink)}
-.btn:focus-visible,summary:focus-visible,input:focus-visible,.scene:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
-.counter{margin-left:auto;align-self:center;font-weight:800;color:var(--accent2)}
-.bubble{margin-top:16px;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:16px 20px;min-height:92px}
-.bubble b{color:var(--accent)}
-.bubble p{margin:4px 0}
-
-/* safety */
-.safe{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.safe label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:13px 15px;cursor:pointer;transition:border-color .2s,background .2s}
-.safe input{width:22px;height:22px;margin-top:3px;accent-color:var(--accent2);flex:none}
-.safe label:has(input:checked){border-color:var(--accent2);background:var(--chip)}
-.safe strong{display:block}
-.safe span{color:var(--muted);font-size:.93rem}
-.meter{height:12px;border-radius:99px;background:var(--line);overflow:hidden;margin:18px 0 8px}
-.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .4s}
-.say{font-weight:800;min-height:1.6em}
-.sos{margin-top:16px;padding:14px 18px;border-radius:18px;background:var(--chip);border:2px dashed var(--accent)}
-
-/* moments */
-.moments{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-details{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:0;overflow:hidden}
-details[open]{border-color:var(--accent)}
-summary{list-style:none;cursor:pointer;padding:18px;display:flex;gap:14px;align-items:center;font-weight:800}
-summary::-webkit-details-marker{display:none}
-summary .em{font-size:34px;line-height:1}
-details p{margin:0;padding:0 18px 18px;color:var(--muted)}
-.note{margin-top:54px;text-align:center;padding:34px 22px;border-radius:28px;background:linear-gradient(160deg,var(--sky1),var(--sky2));color:#3b2340}
-:root[data-mood="moon"] .note{color:#fbeaf1}
-@media (prefers-color-scheme:dark){:root:not([data-mood="golden"]) .note{color:#fbeaf1}}
-.note p{max-width:30em;margin:12px auto 0;font-size:1.1rem}
-footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.95rem}
+.btn[aria-pressed="true"]{outline:3px solid var(--accent2);outline-offset:2px}
+.btn:focus-visible,input:focus-visible,.scene:focus-visible,canvas:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.counter{margin-left:auto;font-weight:800;color:var(--accent2)}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:24px;padding:20px}
+.panel .controls:first-child{margin-top:0}
+input[type=range]{accent-color:var(--accent);width:140px}
+.eq{display:flex;gap:4px;align-items:flex-end;height:26px;margin-left:auto}
+.eq i{width:5px;height:6px;border-radius:3px;background:var(--accent2)}
+.on .eq i{animation:eq .7s ease-in-out infinite alternate}
+.on .eq i:nth-child(2){animation-delay:-.2s}.on .eq i:nth-child(3){animation-delay:-.4s}.on .eq i:nth-child(4){animation-delay:-.1s}
+@keyframes eq{to{height:26px}}
+canvas{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;border-radius:18px;border:2px solid var(--line);touch-action:none;cursor:grab}
+.gbar{display:flex;justify-content:space-between;align-items:center;max-width:360px;margin:14px auto 0;font-weight:800}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <h1>Warda’s walk</h1>
-    <p class="lead">One pair of comfy shoes, one good mood, and Saad walking right beside her. Tap the scene for hearts.</p>
-  </header>
+  <h1>Warda and Saad’s Walk Time</h1>
 
   <div class="scene" id="scene" tabindex="0" role="img" aria-label="Warda and Saad walking hand in hand along a park path">
     <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
@@ -126,10 +102,8 @@ footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.95rem}
       <path d="M0 225 Q160 160 330 215 T640 205 T800 215 V300 H0Z" style="fill:var(--hill2)"/>
       <g class="scroll"><use href="#trees" x="0" y="0"/><use href="#trees" x="800" y="0"/></g>
       <rect y="232" width="800" height="70" style="fill:var(--ground)"/>
-      <rect y="250" width="800" height="40" rx="0" style="fill:var(--path)"/>
+      <rect y="250" width="800" height="40" style="fill:var(--path)"/>
       <line class="dashes" x1="0" y1="270" x2="800" y2="270" stroke-width="4" stroke-dasharray="24 24" stroke-linecap="round" style="stroke:var(--dash)"/>
-
-      <!-- Saad -->
       <g transform="translate(330 222)"><g class="bob">
         <rect class="leg a" x="-8" y="0" width="7" height="38" rx="3.5" fill="#2b3a67"/>
         <rect class="leg b" x="1" y="0" width="7" height="38" rx="3.5" fill="#2b3a67"/>
@@ -138,8 +112,6 @@ footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.95rem}
         <path d="M-12-64 Q-10-78 2-76 Q13-74 12-62 Q6-70 -4-68 Z" fill="#2a1f1a"/>
         <path d="M8-40 L32-14" stroke="#f0c29b" stroke-width="6" stroke-linecap="round"/>
       </g></g>
-
-      <!-- Warda -->
       <g transform="translate(396 222)"><g class="bob" style="animation-delay:-.25s">
         <rect class="leg a" x="-7" y="10" width="6" height="28" rx="3" fill="#f0c29b"/>
         <rect class="leg b" x="1" y="10" width="6" height="28" rx="3" fill="#f0c29b"/>
@@ -154,71 +126,51 @@ footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.95rem}
       <text class="beat" x="351" y="236" font-size="22" text-anchor="middle">❤️</text>
     </svg>
   </div>
-
   <div class="controls">
-    <button class="btn" id="walkBtn">Pause the walk</button>
-    <button class="btn alt" id="moodBtn">Switch to moonlit</button>
-    <span class="counter" aria-live="polite"><span id="steps">0</span> steps together</span>
+    <button class="btn" id="walkBtn">Pause</button>
+    <button class="btn alt" id="moodBtn">Moonlit</button>
+    <span class="counter" aria-live="polite"><span id="steps">0</span> steps</span>
   </div>
 
-  <div class="bubble" aria-live="polite">
-    <p><b>Saad:</b> <span id="s1">Left side of the footpath is mine. You take the view.</span></p>
-    <p><b>Warda:</b> <span id="s2">Deal. But I’m choosing the music.</span></p>
-  </div>
-  <div class="controls"><button class="btn alt" id="chatBtn">Hear another chat</button></div>
-
   <section>
-    <h2>Walk safe, walk happy</h2>
-    <p class="sub">Tick these off before heading out. They take a minute and make the whole walk calmer.</p>
-    <div class="safe" id="safe"></div>
-    <div class="meter" aria-hidden="true"><i id="bar"></i></div>
-    <div class="say" id="say" aria-live="polite">0 of 9 ready</div>
-    <div class="sos"><strong>If something feels wrong:</strong> in Punjab, Police is <b>15</b> and Rescue is <b>1122</b>. Move toward people and light first, then call.</div>
-  </section>
-
-  <section>
-    <h2>Little moments on the way</h2>
-    <p class="sub">Tap a card to see what happens.</p>
-    <div class="moments">
-      <details><summary><span class="em">☕</span>The chai stop</summary><p>Two cups, one bench. Saad says he isn’t hungry, then eats half of Warda’s biscuit.</p></details>
-      <details><summary><span class="em">☔</span>One umbrella, two people</summary><p>It was only drizzling. They stayed under it anyway, walking in step, shoulders close.</p></details>
-      <details><summary><span class="em">🦋</span>Chasing a butterfly</summary><p>Warda spots it first. Saad runs the wrong way, trips on nothing, and the laughing lasts for a full block.</p></details>
-      <details><summary><span class="em">🌅</span>Golden hour selfie</summary><p>Fourteen photos. Saad blinks in thirteen. The fourteenth is the one that goes on the wall.</p></details>
-      <details><summary><span class="em">🍦</span>The ice cream rule</summary><p>The rule: one scoop each, no sharing. Rule broken by the second bite.</p></details>
-      <details><summary><span class="em">🌙</span>Slow down, it’s getting starry</summary><p>The last stretch is quiet. Hands swing a little, nobody checks the time, and the path feels shorter than it is.</p></details>
+    <h2>Music</h2>
+    <div class="panel" id="musicPanel">
+      <div class="controls">
+        <button class="btn" id="playBtn">Play</button>
+        <button class="btn alt" id="t0" aria-pressed="true">Sweet</button>
+        <button class="btn alt" id="t1" aria-pressed="false">Dreamy</button>
+        <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="controls"><label for="vol">Volume</label><input type="range" id="vol" min="0" max="100" value="60"></div>
     </div>
   </section>
 
-  <section class="note">
-    <h2>For Warda</h2>
-    <p>Some people make a walk shorter. Saad would take the long way home with you every single time, as long as you keep that smile.</p>
-    <div class="controls" style="justify-content:center"><button class="btn" id="loveBtn">Send a shower of hearts</button></div>
+  <section>
+    <h2>Catch the hearts</h2>
+    <div class="panel">
+      <canvas id="game" tabindex="0" aria-label="Heart catching game. Drag or use arrow keys to move."></canvas>
+      <div class="gbar"><span>❤️ <span id="score">0</span></span><span>⏱ <span id="time">30</span></span><span>Best <span id="best">0</span></span></div>
+      <div class="controls" style="justify-content:center"><button class="btn" id="startBtn">Play</button></div>
+    </div>
   </section>
-
-  <footer>Made with love for Warda. Don’t forget water, and a good laugh.</footer>
 </main>
 
 <script>
 (function(){
   var scene=document.getElementById('scene'), walkBtn=document.getElementById('walkBtn'), moodBtn=document.getElementById('moodBtn');
-  var steps=0, walking=true, timer;
-  var stepsEl=document.getElementById('steps');
-  function tick(){ if(walking){ steps+=2; stepsEl.textContent=steps; } }
-  timer=setInterval(tick,1000);
-
+  var steps=0, walking=true, stepsEl=document.getElementById('steps');
+  setInterval(function(){ if(walking){ steps+=2; stepsEl.textContent=steps; } },1000);
   walkBtn.onclick=function(){
-    walking=!walking;
-    scene.classList.toggle('paused',!walking);
-    walkBtn.textContent=walking?'Pause the walk':'Keep walking';
+    walking=!walking; scene.classList.toggle('paused',!walking);
+    walkBtn.textContent=walking?'Pause':'Walk';
   };
-
   var root=document.documentElement;
   function isMoon(){
     var m=root.getAttribute('data-mood');
     if(m) return m==='moon';
     return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
   }
-  function label(){ moodBtn.textContent=isMoon()?'Switch to golden hour':'Switch to moonlit'; }
+  function label(){ moodBtn.textContent=isMoon()?'Golden hour':'Moonlit'; }
   moodBtn.onclick=function(){ root.setAttribute('data-mood',isMoon()?'golden':'moon'); label(); };
   label();
 
@@ -238,53 +190,121 @@ footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.95rem}
   scene.addEventListener('keydown',function(e){
     if(e.key==='Enter'||e.key===' '){ e.preventDefault(); var r=scene.getBoundingClientRect(); hearts(r.left+r.width/2,r.top+r.height/2,6); }
   });
-  document.getElementById('loveBtn').onclick=function(){
-    var r=scene.getBoundingClientRect();
-    window.scrollTo({top:scene.offsetTop-20,behavior:'smooth'});
-    for(var k=0;k<4;k++){ (function(k){ setTimeout(function(){ hearts(r.left+r.width*(0.2+k*0.2),r.top+r.height*0.6,5); },300+k*250); })(k); }
-  };
 
-  var chats=[
-    ['Left side of the footpath is mine. You take the view.','Deal. But I’m choosing the music.'],
-    ['Puddle ahead. Jump on three?','One, two… you jumped early!'],
-    ['That cloud looks like a samosa. Don’t laugh.','Saad, it really does.'],
-    ['I’ll carry the umbrella. You carry the good mood.','Fair. I always do.'],
-    ['Slow down a little. The best part is right here.','Okay. Slower. But the chai stall is closing soon.'],
-    ['Chai at the next corner? I’m paying.','Probably. You said “probably”.']
+  /* ---------- Music (made with the browser, no files needed) ---------- */
+  var AC=window.AudioContext||window.webkitAudioContext, ac, master, playing=false, step=0, nextT=0, tm, cur=0;
+  var tracks=[
+    {bpm:100,chords:[
+      {b:130.81,a:[261.63,329.63,392,523.25,392,329.63,392,329.63]},
+      {b:110,a:[220,261.63,329.63,440,329.63,261.63,329.63,261.63]},
+      {b:87.31,a:[174.61,220,261.63,349.23,261.63,220,261.63,220]},
+      {b:98,a:[196,246.94,293.66,392,293.66,246.94,293.66,246.94]}]},
+    {bpm:70,chords:[
+      {b:87.31,a:[174.61,220,261.63,329.63,261.63,220,261.63,220]},
+      {b:130.81,a:[196,261.63,329.63,392,329.63,261.63,329.63,261.63]},
+      {b:146.83,a:[220,293.66,349.23,440,349.23,293.66,349.23,293.66]},
+      {b:98,a:[196,246.94,293.66,392,293.66,246.94,293.66,246.94]}]}
   ];
-  var ci=0;
-  document.getElementById('chatBtn').onclick=function(){
-    ci=(ci+1)%chats.length;
-    document.getElementById('s1').textContent=chats[ci][0];
-    document.getElementById('s2').textContent=chats[ci][1];
-  };
-
-  var tips=[
-    ['Pick a lit, familiar route','Busy and well lit beats a shortcut, especially after sunset.'],
-    ['Tell someone where you’re going','Share the route and a rough return time with family.'],
-    ['Share live location','Turn it on for a trusted person for the whole walk.'],
-    ['Charge the phone','Start above 50% and carry a small power bank if it’s a long one.'],
-    ['Stay visible','Light or bright clothes at dusk. A small reflective strip helps.'],
-    ['Keep one ear free','Lower the volume so you can hear bikes, horns and people.'],
-    ['Use footpaths and crossings','No footpath? Walk facing the traffic. Look both ways, then look again.'],
-    ['Comfy shoes, water, sun cover','Sore feet end walks early. Add a hat or dupatta for the sun.'],
-    ['Save emergency numbers','Police 15, Rescue 1122, plus one family contact on speed dial.']
-  ];
-  var box=document.getElementById('safe'), bar=document.getElementById('bar'), say=document.getElementById('say');
-  tips.forEach(function(t,i){
-    var l=document.createElement('label');
-    l.innerHTML='<input type="checkbox" id="t'+i+'"><div><strong></strong><span></span></div>';
-    l.querySelector('strong').textContent=t[0];
-    l.querySelector('span').textContent=t[1];
-    l.querySelector('input').addEventListener('change',update);
-    box.appendChild(l);
-  });
-  function update(){
-    var n=box.querySelectorAll('input:checked').length, total=tips.length;
-    bar.style.width=(n/total*100)+'%';
-    say.textContent=n===total?'All set. Go enjoy every step!':n+' of '+total+' ready';
+  function note(f,t,d,type,v){
+    var o=ac.createOscillator(), g=ac.createGain();
+    o.type=type; o.frequency.value=f;
+    g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(v,t+.03); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t+d+.05);
   }
-  update();
+  function sched(){
+    var tr=tracks[cur], spb=60/tr.bpm/2;
+    while(nextT<ac.currentTime+.3){
+      var ch=tr.chords[Math.floor(step/8)%tr.chords.length], k=step%8;
+      note(ch.a[k],nextT,spb*2.2,'triangle',.22);
+      if(k===0) note(ch.b,nextT,spb*7,'sine',.4);
+      nextT+=spb; step++;
+    }
+  }
+  var playBtn=document.getElementById('playBtn'), panel=document.getElementById('musicPanel'), vol=document.getElementById('vol');
+  function setVol(){ if(master) master.gain.value=vol.value/100; }
+  vol.oninput=setVol;
+  playBtn.onclick=function(){
+    if(!AC) return;
+    if(!ac){ ac=new AC(); master=ac.createGain(); master.connect(ac.destination); setVol(); }
+    if(!playing){
+      ac.resume(); step=0; nextT=ac.currentTime+.05; tm=setInterval(sched,100); playing=true;
+      playBtn.textContent='Pause'; panel.classList.add('on');
+    } else {
+      clearInterval(tm); playing=false; playBtn.textContent='Play'; panel.classList.remove('on');
+    }
+  };
+  [0,1].forEach(function(i){
+    document.getElementById('t'+i).onclick=function(){
+      cur=i; step=0;
+      document.getElementById('t0').setAttribute('aria-pressed',i===0);
+      document.getElementById('t1').setAttribute('aria-pressed',i===1);
+    };
+  });
+
+  /* ---------- Game: catch the hearts ---------- */
+  var cv=document.getElementById('game'), g=cv.getContext('2d'), W=360, H=440;
+  cv.width=W; cv.height=H;
+  var gs={run:false,score:0,time:30,px:W/2,items:[],last:0,spawn:0,best:0,msg:'Tap Play'};
+  var scoreEl=document.getElementById('score'), timeEl=document.getElementById('time'), bestEl=document.getElementById('best'), startBtn=document.getElementById('startBtn');
+  function css(v){ return getComputedStyle(root).getPropertyValue(v).trim(); }
+  function draw(){
+    var gr=g.createLinearGradient(0,0,0,H); gr.addColorStop(0,css('--sky2')); gr.addColorStop(1,css('--sky1'));
+    g.fillStyle=gr; g.fillRect(0,0,W,H);
+    g.fillStyle=css('--ground'); g.fillRect(0,H-36,W,36);
+    g.textAlign='center'; g.textBaseline='middle';
+    g.font='30px serif';
+    gs.items.forEach(function(it){ g.fillText(it.e,it.x,it.y); });
+    g.font='46px serif'; g.fillText('👫',gs.px,H-50);
+    if(!gs.run){
+      g.fillStyle='rgba(0,0,0,.35)'; g.fillRect(0,H/2-44,W,88);
+      g.fillStyle='#fff'; g.font='800 26px Nunito,sans-serif'; g.fillText(gs.msg,W/2,H/2);
+    }
+  }
+  function hud(){ scoreEl.textContent=gs.score; timeEl.textContent=Math.max(0,Math.ceil(gs.time)); bestEl.textContent=gs.best; }
+  function loop(t){
+    if(!gs.run) return;
+    var dt=Math.min(.05,(t-gs.last)/1000); gs.last=t;
+    gs.time-=dt; gs.spawn-=dt;
+    if(gs.spawn<=0){
+      gs.spawn=Math.max(.3,.6-(30-gs.time)*.01);
+      var r=Math.random(), e=r<.65?'❤️':(r<.78?'⭐':'💧');
+      gs.items.push({e:e,x:24+Math.random()*(W-48),y:-20,v:150+(30-gs.time)*5});
+    }
+    gs.items=gs.items.filter(function(it){
+      it.y+=it.v*dt;
+      if(it.y>H-80&&it.y<H-20&&Math.abs(it.x-gs.px)<38){
+        if(it.e==='❤️') gs.score+=1; else if(it.e==='⭐') gs.score+=3; else gs.score=Math.max(0,gs.score-2);
+        return false;
+      }
+      return it.y<H+30;
+    });
+    if(gs.time<=0){
+      gs.run=false; gs.best=Math.max(gs.best,gs.score); gs.msg='Score '+gs.score;
+      startBtn.textContent='Play again';
+    }
+    hud(); draw();
+    if(gs.run) requestAnimationFrame(loop);
+  }
+  startBtn.onclick=function(){
+    gs.run=true; gs.score=0; gs.time=30; gs.items=[]; gs.spawn=0; gs.px=W/2;
+    startBtn.textContent='Restart'; gs.last=performance.now(); cv.focus({preventScroll:true});
+    requestAnimationFrame(loop);
+  };
+  function move(e){
+    var r=cv.getBoundingClientRect();
+    gs.px=Math.max(26,Math.min(W-26,(e.clientX-r.left)*W/r.width));
+    if(!gs.run) draw();
+  }
+  cv.addEventListener('pointerdown',function(e){ cv.setPointerCapture(e.pointerId); move(e); });
+  cv.addEventListener('pointermove',function(e){ if(e.buttons||e.pointerType==='touch') move(e); });
+  cv.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){ gs.px=Math.max(26,gs.px-24); e.preventDefault(); }
+    if(e.key==='ArrowRight'){ gs.px=Math.min(W-26,gs.px+24); e.preventDefault(); }
+    if(!gs.run) draw();
+  });
+  moodBtn.addEventListener('click',function(){ setTimeout(function(){ if(!gs.run) draw(); },60); });
+  hud(); draw();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ if(!gs.run) draw(); });
 })();
 </script>
 </body>
